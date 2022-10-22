@@ -46,7 +46,13 @@ public class TestCalculator {
     public void testSubstract() {
         calculator.calcSubstract();
         System.out.println("Result = "+calculator.getTxtResult());
-        Assert.assertEquals(calculator.getTxtResult(), "-1");
+        String actual = calculator.getTxtResult();
+        char charActual = actual.charAt(0);
+        int cekASCII = (int) charActual;
+        System.out.println(cekASCII);
+        int cekASCIIFromKeyboardMinus = '-';
+        System.out.println(cekASCIIFromKeyboardMinus);
+        Assert.assertEquals(actual, "−1");
     }
 
     @Test (priority = 3)
